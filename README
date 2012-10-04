@@ -1,0 +1,8 @@
+Framework PHP para el desarrollo de aplicaciones web usando MVC.
+
+Incluye:
+- Login seguro
+- Roles y privilegios
+- Librerias jQuery
+- Librerias SMTP
+

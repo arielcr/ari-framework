@@ -9,6 +9,8 @@
             <pre>
                 <?php print_r($usuario); ?>
             </pre>
+
+            
         </div>
     </body>
 </html>
