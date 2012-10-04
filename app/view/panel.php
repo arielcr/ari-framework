@@ -3,7 +3,6 @@
     <head>
         <?php include DIR_INC . 'head.php'; ?>
     </head>
-
     <body>
         <div id="container">
             <?php include DIR_INC . 'menu.php'; ?>
