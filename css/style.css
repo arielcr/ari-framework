@@ -1,0 +1,36 @@
+body{
+    font-family: Arial;
+    color: #000;
+    font-size: 12px;
+}
+
+#container{
+    width: 900px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: #6975A3 solid 1px;
+    padding: 10px;
+}
+
+#login{
+    width: 300px;
+    background-color: #dddddd;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header{
+    background-color: #dddddd;
+    width: 890px;
+    height: 20px;
+    padding: 5px;
+    line-height: 20px;
+
+}
+
+.texto-rojo{
+    color: #b81900;
+    font-weight: bold;
+}
