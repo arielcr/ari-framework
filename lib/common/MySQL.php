@@ -1245,6 +1245,8 @@ class MySQL
 				$this->active_row = 0;
 				return $members;
 			}
+                    } else {
+                        return false;
                     }			
 		} else {
 			$this->active_row = -1;
