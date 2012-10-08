@@ -24,12 +24,12 @@ class UsuarioModel extends Model {
     }
 
     public function obtenerUsuarios() {
-        $usuarios = $this->db->QueryArray("SELECT u.id_usuario, u.estado, r.nombre as rol, u.username, u.nombre, u.ingreso_fecha, u.ingreso_ip, u.ingreso_total FROM usuario u INNER JOIN rol r ON u.id_rol = r.id_rol ORDER BY u.id_usuario DESC");
+        $usuarios = $this->db->QueryArray("SELECT u.id_usuario, u.estado, r.tipo as rol, u.username, u.nombre, u.ingreso_fecha, u.ingreso_ip, u.ingreso_total FROM usuario u INNER JOIN rol r ON u.id_rol = r.id_rol ORDER BY u.id_usuario DESC");
         return $usuarios;
     }
 
     public function obtenerUsuario($id_usuario) {
-        $usuario = $this->db->QuerySingleRow("SELECT u.id_usuario, u.estado, r.nombre as rol, r.id_rol, u.username, u.nombre, u.ingreso_fecha, u.ingreso_ip, u.ingreso_total, u.fecha_creacion FROM usuario u INNER JOIN rol r ON u.id_rol = r.id_rol WHERE u.id_usuario = $id_usuario ");
+        $usuario = $this->db->QuerySingleRow("SELECT u.id_usuario, u.estado, r.tipo as rol, r.id_rol, u.username, u.nombre, u.ingreso_fecha, u.ingreso_ip, u.ingreso_total, u.fecha_creacion FROM usuario u INNER JOIN rol r ON u.id_rol = r.id_rol WHERE u.id_usuario = $id_usuario ");
         return $usuario;
     }
 

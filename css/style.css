@@ -15,22 +15,70 @@ body{
 
 #login{
     width: 300px;
-    background-color: #dddddd;
+    background-color: #eeeeee;
     height: 150px;
     margin-left: auto;
     margin-right: auto;
 }
 
 #header{
-    background-color: #dddddd;
+    border-bottom: #666666 solid 1px;
     width: 890px;
     height: 20px;
     padding: 5px;
     line-height: 20px;
+    margin-bottom: 15px;
+    text-align: right;
 
+}
+
+#botones{
+    margin: 0 5px 5px 0;
+    padding: 0 5px 5px 0;
+    text-align: left;
+}
+
+.error {
+    font: normal 10px arial;
+    padding: 3px;
+    margin: 3px;
+    background-color: #ffc;
+    border: 1px solid #c00;
 }
 
 .texto-rojo{
     color: #b81900;
     font-weight: bold;
+}
+
+.info, .success, .warning, .caja-error {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('../image/info.png');
+}
+
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('../image/success.png');
+}
+
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('../image/warning.png');
+}
+
+.caja-error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('../image/error.png');
 }
