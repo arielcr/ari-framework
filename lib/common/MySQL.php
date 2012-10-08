@@ -1232,7 +1232,8 @@ class MySQL
 	public function RecordsArray($resultType = MYSQL_BOTH) {
 		$this->ResetError();
 		if ($this->last_result) {
-			if (! mysql_data_seek($this->last_result, 0)) {
+                    if(mysql_num_rows($this->last_result) > 0){
+                        if (! mysql_data_seek($this->last_result, 0)) {
 				$this->SetError();
 				return false;
 			} else {
@@ -1244,6 +1245,7 @@ class MySQL
 				$this->active_row = 0;
 				return $members;
 			}
+                    }			
 		} else {
 			$this->active_row = -1;
 			$this->SetError("No query results exist", -1);
