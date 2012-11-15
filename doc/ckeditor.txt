@@ -1,0 +1,15 @@
+PARA AGREGAR EL CKEDITOR A UNA PAGINA
+===========================================
+Esta en beta. Falta definir los manejadores de los archivos. 
+
+<script type="text/javascript" src="<?php echo SITE_URL; ?>js/ckeditor/ckeditor.js"></script> 
+<script type="text/javascript"><!--
+CKEDITOR.replace('textarea', {
+	filebrowserBrowseUrl: '',
+	filebrowserImageBrowseUrl: '',
+	filebrowserFlashBrowseUrl: '',
+	filebrowserUploadUrl: '',
+	filebrowserImageUploadUrl: '',
+	filebrowserFlashUploadUrl: ''
+});
+//--></script> 
