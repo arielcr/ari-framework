@@ -1,5 +1,4 @@
 <?php
-
 class Language {
     
     public $data = array();
