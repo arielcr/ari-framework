@@ -1,8 +1,78 @@
-Framework PHP para el desarrollo de aplicaciones web usando MVC.
+====================================================================================
+ARIFRAMEWORK
+====================================================================================
 
-Incluye:
-- Login seguro
-- Roles y privilegios
-- Librerias jQuery
-- Librerias SMTP
+------------------------------------------------------------------------------------
+¿ Qué es ?
+------------------------------------------------------------------------------------
+
+Es un marco de desarrollo en PHP basado en el patrón de arquitectura de software MVC para el desarrollo rápido de aplicaciones y sitios web.
+
+------------------------------------------------------------------------------------
+¿ Qué hace ?
+------------------------------------------------------------------------------------
+
+Permite desarrollar sitios web de una manera ordenada y estructurada siguiendo el patrón Modelo-Vista-Controlador. Además contiene varias librerias y herramientas de utilidad.
+
+------------------------------------------------------------------------------------
+Guia para el Desarrollador
+------------------------------------------------------------------------------------
+
+El código fuente se encuentra en: https://github.com/arielcr/ari-framework 
+
+
+1. Instalación
+
+a) Copiar todos los archivos al servidor web. Muy importante que para el entorno de desarrollo se tenga en cuenta colocarlos bajo una carpeta en el servidor, de modo que se pueda accesar de la siguiente forma: http://<servidor>/<aplicacion>. Cuando se pase a producción debe de descomentar la linea 8 del archivo /lib/common/Dispatcher.php y comentar la linea 9
+
+b) Realizar las modificaciones necesarias en el archivo /config/config.inc.php. Solamente debe de cambiar la configuracion de la base de datos y la configuracion de la URL
+
+c) Verificar que en el servidor esté instalado el mod_rewrite
+
+
+2. Estructura de los directorios
+
++---app (aplicacion)
+|   +---controller 
+|   +---language
+|   +---model
+|   +---object
+|   +---view
++---config (archivo de configuracion)
++---css (hojas de estilo)
++---doc (documentacion)
++---image (imagenes)
++---js (librerias javascript)
++---lib (framework)
+|   +---common
+|   +---helper
+
+a. app/controller/: controladores del sitio, en ellos se cargan datos del modelo y se guardan en variables para ser pasados a la vista. Además se realizan las operaciones y transacciones que sean necesarias
+
+b. app/language/: archivos de idioma del sitio
+
+c. app/model/: capa de acceso a datos, se conecta con el servidor de base de datos y se realizan todas las consultas necesarias que son accesadas por el controlador
+
+d. app/object/: clases de objetos que el desarrollador considere pertinente utilizar
+
+e. app/view/: archivos de vista (templates) donde se muestran los datos finales cargados desde el controlador
+
+
+3. Estructura de la URL
+
+Las páginas utilizan la URL de la forma: 
+
+http://eldominio.com/<controlador>/<metodo>/<parametro>
+
+<controlador> es el nombre del controlador que se quiere accesar (sin la palabra 'Controller' y en minuscula)
+
+<metodo> es la función del controlador que se quiere accesar, si no se espesifica se accesa a la función index por defecto
+
+<parametro> es cualquier parametro que se quiera pasar a la funcion del controlador. Es opcional
+
+
+4. Ejemplo
+
+En el código viene una aplicación de ejemplo con la cual se puede guiar para entender mejor el funcionamiento
+
 
