@@ -46,7 +46,7 @@ class Dispatcher {
         /**
          * Modify this section to count the array keys and assign as Controller/Method/Arguments
          */
-        $controller = !empty($diff[3]) ? ucfirst($diff[3]) . 'Controller' : 'DefaultController';
+        $controller = !empty($diff[3]) ? ucfirst($diff[3]) . 'Controller' : ucfirst(default_controller) . 'Controller';
 
         $method = array();
 
