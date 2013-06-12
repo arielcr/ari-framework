@@ -43,6 +43,9 @@ class Dispatcher {
 
         $diff = array_diff($url_pieces, $site_root_pieces);
 
+        /**
+         * Modify this section to count the array keys and assign as Controller/Method/Arguments
+         */
         $controller = !empty($diff[3]) ? ucfirst($diff[3]) . 'Controller' : 'DefaultController';
 
         $method = array();
