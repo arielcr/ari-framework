@@ -1,78 +1,117 @@
-====================================================================================
-ARIFRAMEWORK
-====================================================================================
+# ARI Framework
 
-------------------------------------------------------------------------------------
-¿ Qué es ?
-------------------------------------------------------------------------------------
+**ARI Framework** es un micro framework en PHP basado en el patrón de arquitectura **Modelo-Vista-Controlador (MVC)**, diseñado para facilitar el desarrollo rápido y estructurado de aplicaciones web.
 
-Es un marco de desarrollo en PHP basado en el patrón de arquitectura de software MVC para el desarrollo rápido de aplicaciones y sitios web.
+---
 
-------------------------------------------------------------------------------------
-¿ Qué hace ?
-------------------------------------------------------------------------------------
+## 📌 ¿Qué es?
 
-Permite desarrollar sitios web de una manera ordenada y estructurada siguiendo el patrón Modelo-Vista-Controlador. Además contiene varias librerias y herramientas de utilidad.
+ARI Framework es una herramienta ligera y sencilla para el desarrollo web en PHP, ideal para proyectos que requieran una estructura clara sin la complejidad de frameworks más pesados. Fue creado con el objetivo de mantener el código organizado y facilitar la mantenibilidad de las aplicaciones.
 
-------------------------------------------------------------------------------------
-Guia para el Desarrollador
-------------------------------------------------------------------------------------
+---
 
-El código fuente se encuentra en: https://github.com/arielcr/ari-framework 
+## ⚙️ ¿Qué hace?
 
+Este framework permite desarrollar sitios y aplicaciones web siguiendo el patrón **MVC**, separando claramente la lógica de negocios, la presentación y el control de flujo. Además, incluye librerías y utilidades comunes que aceleran el desarrollo.
 
-1. Instalación
+---
 
-a) Copiar todos los archivos al servidor web. Muy importante que para el entorno de desarrollo se tenga en cuenta colocarlos bajo una carpeta en el servidor, de modo que se pueda accesar de la siguiente forma: http://<servidor>/<aplicacion>. Cuando se pase a producción debe de descomentar la linea 8 del archivo /lib/common/Dispatcher.php y comentar la linea 9
+## 📖 Guía para Desarrolladores
 
-b) Realizar las modificaciones necesarias en el archivo /config/config.inc.php. Solamente debe de cambiar la configuracion de la base de datos y la configuracion de la URL
+El código fuente está disponible en GitHub:  
+👉 [https://github.com/arielcr/ari-framework](https://github.com/arielcr/ari-framework)
 
-c) Verificar que en el servidor esté instalado el mod_rewrite
+---
 
+### 🔧 1. Instalación
 
-2. Estructura de los directorios
+1. **Copiar archivos al servidor web**
 
-+---app (aplicacion)
-|   +---controller 
-|   +---language
-|   +---model
-|   +---object
-|   +---view
-+---config (archivo de configuracion)
-+---css (hojas de estilo)
-+---doc (documentacion)
-+---image (imagenes)
-+---js (librerias javascript)
-+---lib (framework)
-|   +---common
-|   +---helper
+   - Para desarrollo local, ubicar los archivos dentro de una carpeta accesible vía navegador, por ejemplo:  
+     `http://localhost/miapp`
+   - Para producción, editar el archivo `/lib/common/Dispatcher.php`:
+     - **Descomentar** la línea 8.
+     - **Comentar** la línea 9.
 
-a. app/controller/: controladores del sitio, en ellos se cargan datos del modelo y se guardan en variables para ser pasados a la vista. Además se realizan las operaciones y transacciones que sean necesarias
+2. **Editar configuración**
 
-b. app/language/: archivos de idioma del sitio
+   - Modificar el archivo `/config/config.inc.php` con los datos correctos de:
+     - **Base de datos**
+     - **URL base del proyecto**
 
-c. app/model/: capa de acceso a datos, se conecta con el servidor de base de datos y se realizan todas las consultas necesarias que son accesadas por el controlador
+3. **Verificar `mod_rewrite`**
 
-d. app/object/: clases de objetos que el desarrollador considere pertinente utilizar
+   - Asegúrate de que el módulo **mod_rewrite** esté habilitado en tu servidor Apache.
 
-e. app/view/: archivos de vista (templates) donde se muestran los datos finales cargados desde el controlador
+---
 
+### 📁 2. Estructura de Directorios
 
-3. Estructura de la URL
+```text
++---app              # Aplicación principal
+|   +---controller   # Controladores
+|   +---language     # Archivos de idioma
+|   +---model        # Acceso a datos
+|   +---object       # Clases auxiliares
+|   +---view         # Vistas (plantillas)
++---config           # Configuración general
++---css              # Hojas de estilo
++---doc              # Documentación
++---image            # Imágenes
++---js               # Librerías JavaScript
++---lib              # Código del framework
+    +---common
+    +---helper
+```
 
-Las páginas utilizan la URL de la forma: 
+**Descripción de carpetas clave:**
 
-http://eldominio.com/<controlador>/<metodo>/<parametro>
+- `app/controller/`: Lógica de control. Carga datos del modelo y los pasa a la vista. Realiza operaciones y transacciones necesarias.
+- `app/model/`: Capa de acceso a datos. Contiene todas las consultas a la base de datos.
+- `app/view/`: Plantillas HTML/PHP donde se muestran los datos.
+- `app/language/`: Archivos de texto para internacionalización.
+- `app/object/`: Clases adicionales definidas por el desarrollador.
 
-<controlador> es el nombre del controlador que se quiere accesar (sin la palabra 'Controller' y en minuscula)
+---
 
-<metodo> es la función del controlador que se quiere accesar, si no se espesifica se accesa a la función index por defecto
+### 🌐 3. Estructura de la URL
 
-<parametro> es cualquier parametro que se quiera pasar a la funcion del controlador. Es opcional
+Las URLs tienen el siguiente formato:
 
+```
+http://tudominio.com/<controlador>/<método>/<parámetro>
+```
 
-4. Ejemplo
+- `<controlador>`: Nombre del controlador (en minúsculas, sin la palabra `Controller`)
+- `<método>`: Nombre del método a ejecutar. Si se omite, se usa `index` por defecto.
+- `<parámetro>`: Parámetro opcional pasado al método del controlador.
 
-En el código viene una aplicación de ejemplo con la cual se puede guiar para entender mejor el funcionamiento
+**Ejemplo:**
 
+```
+http://tudominio.com/usuario/perfil/123
+```
 
+Esto llama al método `perfil` del controlador `UsuarioController` con el parámetro `123`.
+
+---
+
+### 🚀 4. Aplicación de Ejemplo
+
+El repositorio incluye una aplicación de ejemplo funcional para ayudarte a comprender el funcionamiento general del framework.
+
+---
+
+## 🧑‍💻 Autor
+
+Desarrollado por **Ariel Orozco Rivera**  
+👨‍💻 Ingeniero en Sistemas | Backend Developer | +10 años de experiencia en PHP y Go
+
+---
+
+## 📜 Licencia
+
+Este proyecto se distribuye bajo la licencia MIT.  
+Consulta el archivo `LICENSE` para más detalles.
+
+---
