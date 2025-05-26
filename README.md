@@ -1,117 +1,117 @@
 # ARI Framework
 
-**ARI Framework** es un micro framework en PHP basado en el patrón de arquitectura **Modelo-Vista-Controlador (MVC)**, diseñado para facilitar el desarrollo rápido y estructurado de aplicaciones web.
+**ARI Framework** is a lightweight PHP micro-framework based on the **Model-View-Controller (MVC)** architectural pattern, designed to streamline the development of structured web applications.
 
 ---
 
-## 📌 ¿Qué es?
+## 📌 What is it?
 
-ARI Framework es una herramienta ligera y sencilla para el desarrollo web en PHP, ideal para proyectos que requieran una estructura clara sin la complejidad de frameworks más pesados. Fue creado con el objetivo de mantener el código organizado y facilitar la mantenibilidad de las aplicaciones.
-
----
-
-## ⚙️ ¿Qué hace?
-
-Este framework permite desarrollar sitios y aplicaciones web siguiendo el patrón **MVC**, separando claramente la lógica de negocios, la presentación y el control de flujo. Además, incluye librerías y utilidades comunes que aceleran el desarrollo.
+ARI Framework is a simple and efficient tool for PHP web development. It's ideal for projects that need a clean structure without the overhead of larger frameworks. It was built to promote organized, maintainable, and scalable code.
 
 ---
 
-## 📖 Guía para Desarrolladores
+## ⚙️ What does it do?
 
-El código fuente está disponible en GitHub:  
+This framework enables you to build web applications following the **MVC pattern**, clearly separating business logic, presentation, and control flow. It also includes useful utilities and libraries to speed up development.
+
+---
+
+## 📖 Developer Guide
+
+Source code is available on GitHub:  
 👉 [https://github.com/arielcr/ari-framework](https://github.com/arielcr/ari-framework)
 
 ---
 
-### 🔧 1. Instalación
+### 🔧 1. Installation
 
-1. **Copiar archivos al servidor web**
+1. **Copy the files to your web server**
 
-   - Para desarrollo local, ubicar los archivos dentro de una carpeta accesible vía navegador, por ejemplo:  
-     `http://localhost/miapp`
-   - Para producción, editar el archivo `/lib/common/Dispatcher.php`:
-     - **Descomentar** la línea 8.
-     - **Comentar** la línea 9.
+   - For local development, place the files in a subfolder that can be accessed like:  
+     `http://localhost/myapp`
+   - For production, open `/lib/common/Dispatcher.php`:
+     - **Uncomment** line 8
+     - **Comment out** line 9
 
-2. **Editar configuración**
+2. **Update the configuration**
 
-   - Modificar el archivo `/config/config.inc.php` con los datos correctos de:
-     - **Base de datos**
-     - **URL base del proyecto**
+   - Edit `/config/config.inc.php` with the correct:
+     - **Database credentials**
+     - **Base URL**
 
-3. **Verificar `mod_rewrite`**
+3. **Ensure `mod_rewrite` is enabled**
 
-   - Asegúrate de que el módulo **mod_rewrite** esté habilitado en tu servidor Apache.
+   - Apache's `mod_rewrite` module must be active for URL routing to work.
 
 ---
 
-### 📁 2. Estructura de Directorios
+### 📁 2. Directory Structure
 
 ```text
-+---app              # Aplicación principal
-|   +---controller   # Controladores
-|   +---language     # Archivos de idioma
-|   +---model        # Acceso a datos
-|   +---object       # Clases auxiliares
-|   +---view         # Vistas (plantillas)
-+---config           # Configuración general
-+---css              # Hojas de estilo
-+---doc              # Documentación
-+---image            # Imágenes
-+---js               # Librerías JavaScript
-+---lib              # Código del framework
++---app              # Main application
+|   +---controller   # Controllers
+|   +---language     # Language files
+|   +---model        # Database logic
+|   +---object       # Additional classes
+|   +---view         # Views (templates)
++---config           # Configuration files
++---css              # Stylesheets
++---doc              # Documentation
++---image            # Images
++---js               # JavaScript libraries
++---lib              # Framework core
     +---common
     +---helper
 ```
 
-**Descripción de carpetas clave:**
+**Key folder descriptions:**
 
-- `app/controller/`: Lógica de control. Carga datos del modelo y los pasa a la vista. Realiza operaciones y transacciones necesarias.
-- `app/model/`: Capa de acceso a datos. Contiene todas las consultas a la base de datos.
-- `app/view/`: Plantillas HTML/PHP donde se muestran los datos.
-- `app/language/`: Archivos de texto para internacionalización.
-- `app/object/`: Clases adicionales definidas por el desarrollador.
-
----
-
-### 🌐 3. Estructura de la URL
-
-Las URLs tienen el siguiente formato:
-
-```
-http://tudominio.com/<controlador>/<método>/<parámetro>
-```
-
-- `<controlador>`: Nombre del controlador (en minúsculas, sin la palabra `Controller`)
-- `<método>`: Nombre del método a ejecutar. Si se omite, se usa `index` por defecto.
-- `<parámetro>`: Parámetro opcional pasado al método del controlador.
-
-**Ejemplo:**
-
-```
-http://tudominio.com/usuario/perfil/123
-```
-
-Esto llama al método `perfil` del controlador `UsuarioController` con el parámetro `123`.
+- `app/controller/`: Contains site logic. Controllers load data from the model and pass it to views.
+- `app/model/`: Handles all database interactions.
+- `app/view/`: Templates where data is presented.
+- `app/language/`: Language files for internationalization.
+- `app/object/`: Helper or domain-specific classes.
 
 ---
 
-### 🚀 4. Aplicación de Ejemplo
+### 🌐 3. URL Structure
 
-El repositorio incluye una aplicación de ejemplo funcional para ayudarte a comprender el funcionamiento general del framework.
+The application uses clean URLs in the following format:
+
+```
+http://yourdomain.com/<controller>/<method>/<parameter>
+```
+
+- `<controller>`: The controller name (lowercase, without the word `Controller`)
+- `<method>`: The method to execute. Defaults to `index` if omitted.
+- `<parameter>`: Optional parameter passed to the method.
+
+**Example:**
+
+```
+http://yourdomain.com/user/profile/123
+```
+
+This will call the `profile` method in the `UserController` with `123` as a parameter.
 
 ---
 
-## 🧑‍💻 Autor
+### 🚀 4. Example Application
 
-Desarrollado por **Ariel Orozco Rivera**  
-👨‍💻 Ingeniero en Sistemas | Backend Developer | +10 años de experiencia en PHP y Go
+The repository includes a functional example app to help you understand the framework’s structure and usage.
 
 ---
 
-## 📜 Licencia
+## 🧑‍💻 Author
 
-Este proyecto se distribuye bajo la licencia MIT.  
-Consulta el archivo `LICENSE` para más detalles.
+Developed by **Ariel Orozco Rivera**  
+👨‍💻 Senior Software Engineer | Backend Developer | 10+ years of experience in PHP and Go
+
+---
+
+## 📜 License
+
+This project is released under the MIT License.  
+See the `LICENSE` file for more information.
 
 ---
